@@ -6,6 +6,9 @@ This module uses Node.js streams to minimize memory usage and optimize speed, pe
 
 These audio files are fully compatible with both the [Google Speech to Text API (v2)](https://github.com/gillesdemey/google-speech-v2) and the [Wit.ai Speech API](https://wit.ai/docs/api#span-classtitle-verb-postspeech).
 
+## Acknowledgements
+This a repo forked from [node-record-lpcm16](https://github.com/gillesdemey/node-record-lpcm16), with a small modification to change the encoding.
+
 ## Installation
 
 `npm install node-record-mulaw8`
