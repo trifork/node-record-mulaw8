@@ -1,6 +1,6 @@
-# node-record-lpcm-16
+# node-record-mulaw-8
 
-Records a 16-bit signed-integer linear pulse modulation code WAV audio file.
+Records a 8-bit µ-Law encoded WAV audio file, a standard used in telephony: https://en.wikipedia.org/wiki/G.711.
 
 This module uses Node.js streams to minimize memory usage and optimize speed, perfect for embedded devices and "the internet of things".
 
@@ -8,7 +8,7 @@ These audio files are fully compatible with both the [Google Speech to Text API 
 
 ## Installation
 
-`npm install node-record-lpcm16`
+`npm install node-record-mulaw8`
 
 ## Dependencies
 
@@ -42,18 +42,16 @@ device                : null   // recording device (e.g.: 'plughw:1')
 audioType             : 'wav'  // audio type to record
 ```
 
-> Please note that `arecord` might not work on all operating systems. If you can't capture any sound with `arecord`, try to change device (`arecord -l`).
-
 ## Usage
 
 ```javascript
-const recorder = require('node-record-lpcm16')
+const recorder = require('node-record-mulaw8')
 const fs = require('fs')
 
 const file = fs.createWriteStream('test.wav', { encoding: 'binary' })
 
 recorder.record({
-  sampleRate: 44100
+  sampleRate: 8000
 })
 .stream()
 .pipe(file)
@@ -62,7 +60,7 @@ recorder.record({
 You can pause, resume and stop the recording manually.
 
 ```javascript
-const recorder = require('node-record-lpcm16')
+const recorder = require('node-record-mulaw8')
 const fs = require('fs')
 
 const file = fs.createWriteStream('test.wav', { encoding: 'binary' })
@@ -90,11 +88,8 @@ setTimeout(() => {
 
 The following recorders are included:
 
-* rec
 * sox
-* arecord
 
-**Note:** not all recorders support all features!
 
 ## Error handling
 
