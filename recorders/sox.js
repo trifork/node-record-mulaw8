@@ -6,8 +6,8 @@ module.exports = (options) => {
     '--no-show-progress', // show no progress
     '--rate', options.sampleRate, // sample rate
     '--channels', options.channels, // channels
-    '--encoding', 'signed-integer', // sample encoding
-    '--bits', '16', // precision (bits)
+    '--encoding', 'mu-law', // sample encoding
+    '--bits', '8', // precision (bits)
     '--type', options.audioType, // audio type
     '-' // pipe
   ]
