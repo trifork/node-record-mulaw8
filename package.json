@@ -1,7 +1,7 @@
 {
   "name": "node-record-mulaw8",
   "author": "cgrtrifork",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Record a microphone input stream",
   "license": "ISC",
   "main": "index.js",
